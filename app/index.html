@@ -27,8 +27,8 @@
       <th>Username</th>
       <th>Email</th>
       <th>Address</th>
-      <tr ng-repeat="x in users">
-        <td>{{ x.name }}</td>
+      <tr ng-repeat="x in users | orderBy : 'name' ">
+        <td><a ng-href="#/{{x.id}}">{{ x.name }}</a></td>
         <td>{{ x.username }}</td>
         <td>{{ x.email }}</td>
         <td>{{ x.address.city }} {{ x.address.zipcode }}</td>
