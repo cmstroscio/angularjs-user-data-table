@@ -20,6 +20,26 @@
 }
 
 .menu > li + li:before {
-  content: "|";
+  content: "|";f
   padding-right: 0.3em;
+}
+
+table,
+td {
+ border-collapse: collapse;
+ border: 1px solid black;
+}
+
+th {
+  text-align: left;
+  border-right: 1px solid black;
+}
+
+th:last-of-type {
+  border-right: none;
+}
+
+th, 
+td {
+  padding: 5px 10px;
 }
