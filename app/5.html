@@ -1,32 +1,31 @@
 <!DOCTYPE html>
 
 <html lang="en" ng-app="myApp" class="no-js">
-<head></head>
-<body ng-controller="myCtrl">
-  <h1>Chelsey's info</h1>
-  <ul ng-repeat="x in users">
-  	<li>User ID: {{ x.id }}</li>
-  	<li>Name: {{ x.name }}</li>
-  	<li>Username: {{ x.username }}</li>
-  	<li>Email: {{ x.email }}</li>
-  	<li>Address:
-	  	<div>
-	  		<p>{{ x.address.street }}</p>
-	  		<p>{{ x.address.city }}</p>
-	  		<p>{{ x.address.zipcode }}</p>
-	  	</div>
+<head>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body ng-controller="myCtrl" class="row center-block">
+  <div class="demo-card-wide mdl-card col-md-6" ng-repeat="x in users" ng-show="x.id == 5">
+  
+    <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">{{ x.name }}</h2>
+  </div>
+  <ul class="list-group mdl-card__supporting-text">
+  	<li class="list-group-item">User ID: {{ x.id }}</li>
+  	<li class="list-group-item">Name: {{ x.name }}</li>
+  	<li class="list-group-item">Username: {{ x.username }}</li>
+  	<li class="list-group-item">Email: {{ x.email }}</li>
+  	<li class="list-group-item">Address: {{ x.address.street }}, {{ x.address.city }} St., {{ x.address.zipcode }}
   	</li>
-  	<li>Lat: {{ x.address.geo.lat }} Long:{{x.address.geo.lng }}</li>
-  	<li>Phone: {{ x.phone }}</li>
-  	<li>Website: {{ x.website }}</li>
-  	<li>Company
-    	<div>
-    		<p>Name: {{ x.company.name }}</p>
-    		<p>Catchphrase: {{ x.company.catchprase }}</p>
-    		<p>Bs: {{ x.company.bs }}</p>
-    	</div>
+  	<li class="list-group-item">Lat: {{ x.address.geo.lat }} Long:{{x.address.geo.lng }}</li>
+  	<li class="list-group-item">Phone: {{ x.phone }}</li>
+  	<li class="list-group-item">Website: {{ x.website }}</li>
+  	<li class="list-group-item">Company: {{ x.company.name }}, Catchphrase: {{ x.company.catchprase }}, Bs: {{ x.company.bs }}
   	</li>
   </ul>
+  </div>
   <div ng-view></div>
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
@@ -38,5 +37,6 @@
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
   <script src="components/version/interpolate-filter.js"></script>
+
 </body>
 </html>

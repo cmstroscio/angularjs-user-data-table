@@ -32,7 +32,7 @@ app.controller('myCtrl', function($scope, $http, $route, $routeParams, $location
         // needed?
         // $scope.profile= $routeParams.id;
     });
-    $scope.message = "hello" 
+    $scope.numLimit = 1;
     // needed?
     // $scope.getIndex = function(users) {
     // return $scope.users.indexOf(id);
