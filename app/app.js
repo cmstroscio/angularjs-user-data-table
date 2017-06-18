@@ -1,15 +1,20 @@
 'use strict';
 // Declare app level module which depends on views, and components
 var app = angular.module('myApp', ["ngRoute"]);
+
 app.config(function($routeProvider, $locationProvider) {
+    
+    $locationProvider.hashPrefix('');
+
     $routeProvider
     // .when("/", {
     //     templateUrl : "",
     // })
-        .when("/#/5", {
-            templateUrl: "chelsey.html",
+        .when("http://localhost:8000/:id", {
+            templateUrl: "5.html",
+            // template: "<h1>yoeeoe</h1>",
             controller: "myCtrl",
-        })
+        });
         // .when("/green", {
         //     templateUrl : "green.htm"
         // })
@@ -27,6 +32,7 @@ app.controller('myCtrl', function($scope, $http, $route, $routeParams, $location
         // needed?
         // $scope.profile= $routeParams.id;
     });
+    $scope.message = "hello" 
     // needed?
     // $scope.getIndex = function(users) {
     // return $scope.users.indexOf(id);

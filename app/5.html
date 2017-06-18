@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="en" ng-app="myApp" class="no-js">
+<head></head>
+<body ng-controller="myCtrl">
+  <h1>Chelsey's info</h1>
+  <ul ng-repeat="x in users">
+  	<li>User ID: {{ x.id }}</li>
+  	<li>Name: {{ x.name }}</li>
+  	<li>Username: {{ x.username }}</li>
+  	<li>Email: {{ x.email }}</li>
+  	<li>Address:
+	  	<div>
+	  		<p>{{ x.address.street }}</p>
+	  		<p>{{ x.address.city }}</p>
+	  		<p>{{ x.address.zipcode }}</p>
+	  	</div>
+  	</li>
+  	<li>Lat: {{ x.address.geo.lat }} Long:{{x.address.geo.lng }}</li>
+  	<li>Phone: {{ x.phone }}</li>
+  	<li>Website: {{ x.website }}</li>
+  	<li>Company
+    	<div>
+    		<p>Name: {{ x.company.name }}</p>
+    		<p>Catchphrase: {{ x.company.catchprase }}</p>
+    		<p>Bs: {{ x.company.bs }}</p>
+    	</div>
+  	</li>
+  </ul>
+  <div ng-view></div>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="app.js"></script>
+  <!-- <script src="angular-route.min.js"></script> -->
+  <!-- <script src="controllers.js"></script> -->
+  <!-- <script src="view1/view1.js"></script> -->
+  <!-- <script src="view2/view2.js"></script> -->
+  <script src="components/version/version.js"></script>
+  <script src="components/version/version-directive.js"></script>
+  <script src="components/version/interpolate-filter.js"></script>
+</body>
+</html>
