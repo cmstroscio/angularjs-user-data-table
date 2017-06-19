@@ -43,3 +43,11 @@ th,
 td {
   padding: 5px 10px;
 }
+
+.mdl-card__supporting-text {
+  color: #454545;
+}
+
+.list-group-item {
+  border: 1px solid #454545;
+}
