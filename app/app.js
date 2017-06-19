@@ -11,7 +11,7 @@ app.config(function($routeProvider, $locationProvider) {
     //     templateUrl : "",
     // })
         .when("http://localhost:8000/:id", {
-            templateUrl: "5.html",
+            templateUrl: "views/5.html",
             // template: "<h1>yoeeoe</h1>",
             controller: "myCtrl",
         });
@@ -38,3 +38,4 @@ app.controller('myCtrl', function($scope, $http, $route, $routeParams, $location
     // return $scope.users.indexOf(id);
     // }
 });
+

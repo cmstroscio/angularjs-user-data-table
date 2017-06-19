@@ -12,81 +12,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
-  <link rel="stylesheet" href="app.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+  <link rel="stylesheet" href="app.css">
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 </head>
 <body>
-    <div ng-controller="myCtrl" class="row center-block demo-card-wide mdl-card col-md-6">
-    <!-- <h1>{{users}}</h1> -->
-    <div >
-    <table class="mdl-data-table mdl-data-table--selectable">
-      <th>Name</th>
-      <th>Username</th>
-      <th>Email</th>
-      <th>Address</th>
-      <tr ng-repeat="x in users | orderBy : 'name' ">
-        <td><a ng-href="/{{x.id}}">{{ x.name }}</a></td>
-        <td>{{ x.username }}</td>
-        <td>{{ x.email }}</td>
-        <td>{{ x.address.city }} {{ x.address.zipcode }}</td>
-      </tr>
-    </table>
-    </div>
-
-
-    <textarea id="field" onkeyup="countChar(this)"type="text" name="name" maxlength="10"></textarea>
-    <div id="charNum"></div>
-<script type="text/javascript">
-  $(function () {
-      $("textarea[type=text]").on("keyup change", function (e) {
-          var maxLength = $(this).attr('maxlength');
-          if ($(this).val().length >= 5) {
-              $('#charNum').css("color", "red");
-          } else if ($(this).val().length < 5) {
-              $('#charNum').css("color", "black");
-          }
-          else {
-              $('#charNum').css("color", "black");
-          }
-      });
-  });
-
-  function countChar(val) {
-        var len = val.value.length;
-        if (len >= 10) {
-          val.value = val.value.substring(0, 10);
-        } else {
-          $('#charNum').text(10 - len);
-        }
-  };
-</script>
-
-  </div>
-
-  <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-  <![endif]-->
-
-  <div ng-view></div>
-
+    <div class="row">
+       <div class="col-md-10">
+          <div ng-controller="myCtrl" class="container">
+             <h2 class="mdl-card__title">Users</h2>
+             <table class="table">
+             <th>Name</th>
+             <th>Username</th>
+             <th>Email</th>
+             <th>Address</th>
+             <tr ng-repeat="x in users | orderBy : 'name' ">
+                <td><a ng-href="/views/{{x.id}}">{{ x.name }} <i class="material-icons user-icon">face</i></a></td>
+                <td>{{ x.username }}</td>
+                <td>{{ x.email }}</td>
+                <td>{{ x.address.city }} {{ x.address.zipcode }}</td>
+             </tr>
+          </div>
+       </div>
+    </div>  
+    <div ng-view></div>
+<!--[if lt IE 7]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
 <!--   <div>Angular seed app: v<span app-version></span></div> -->
 
-  <!-- In production use:
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
-  -->
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
-  <script src="app.js"></script>
-  <!-- <script src="angular-route.min.js"></script> -->
-  <!-- <script src="controllers.js"></script> -->
-  <!-- <script src="view1/view1.js"></script> -->
-  <!-- <script src="view2/view2.js"></script> -->
-  <script src="components/version/version.js"></script>
-  <script src="components/version/version-directive.js"></script>
-  <script src="components/version/interpolate-filter.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- In production use:
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+-->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="app.js"></script>
+    <!-- <script src="angular-route.min.js"></script> -->
+    <!-- <script src="controllers.js"></script> -->
+    <!-- <script src="view1/view1.js"></script> -->
+    <!-- <script src="view2/view2.js"></script> -->
+    <script src="components/version/version.js"></script>
+    <script src="components/version/version-directive.js"></script>
+    <script src="components/version/interpolate-filter.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </body>
 </html>
