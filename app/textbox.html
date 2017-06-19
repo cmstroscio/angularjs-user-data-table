@@ -22,9 +22,10 @@
 <body>
     <div class="row center-block demo-card-wide mdl-card">
       <div class="col-md-8">
-        <label class="mdl-card__title">Textbox allows only 10 characters</label>
-        <textarea id="field" onkeyup="countChar(this)"type="text" name="name" maxlength="10"></textarea>
-        <div id="charNum"></div>
+        <label class="mdl-card__title">Textbox allows up to 100 characters</label>
+        <textarea id="field" onkeyup="countChar(this)"type="text" name="name" maxlength="100"></textarea>
+        <p>Remainging Characters: <span id="charNum"></span></p>
+        
       </div>  
     </div>   
 </body>

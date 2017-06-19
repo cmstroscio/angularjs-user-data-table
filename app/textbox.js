@@ -3,9 +3,9 @@
   $(function () {
       $("textarea[type=text]").on("keyup change", function (e) {
           var maxLength = $(this).attr('maxlength');
-          if ($(this).val().length >= 5) {
+          if ($(this).val().length >= 95) {
               $('#charNum').css("color", "red");
-          } else if ($(this).val().length < 5) {
+          } else if ($(this).val().length < 95) {
               $('#charNum').css("color", "black");
           }
           else {
@@ -16,9 +16,9 @@
 
   function countChar(val) {
         var len = val.value.length;
-        if (len >= 10) {
-          val.value = val.value.substring(0, 10);
+        if (len >= 100) {
+          val.value = val.value.substring(0, 100);
         } else {
-          $('#charNum').text(10 - len);
+          $('#charNum').text(100 - len);
         }
   };
