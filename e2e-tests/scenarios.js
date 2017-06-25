@@ -11,18 +11,18 @@ describe('my app', function() {
   });
 
 
-  describe('view1', function() {
+  describe('10', function() {
 
     beforeEach(function() {
-      browser.get('index.html#!/view1');
+      browser.get('.10');
     });
 
 
-    it('should render view1 when user navigates to /view1', function() {
-      expect(element.all(by.css('[ng-view] p')).first().getText()).
-        toMatch(/partial for view 1/);
+    it('should render 10 when user navigates to /10', function() {
+      expect(element.all(by.css('[ng-view] div')).first().getText()).
+        toMatch(/partial for 10/);
     });
-
+    console.log('passed');
   });
 
 

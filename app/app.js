@@ -3,39 +3,12 @@
 var app = angular.module('myApp', ["ngRoute"]);
 
 app.config(function($routeProvider, $locationProvider) {
-    
-    $locationProvider.hashPrefix('');
 
     $routeProvider
-    // .when("/", {
-    //     templateUrl : "",
-    // })
         .when("http://localhost:8000/:id", {
-            templateUrl: "views/5.html",
-            // template: "<h1>yoeeoe</h1>",
+            templateUrl: "views/:id.html",
             controller: "myCtrl",
         });
-        // .when("/green", {
-        //     templateUrl : "green.htm"
-        // })
-        // .when("/blue", {
-        //     templateUrl : "blue.htm"
-        // });
 });
-app.controller('myCtrl', function($scope, $http, $route, $routeParams, $location) {
-    // needed?
-    $scope.$route = $route;
-    $scope.$location = $location;
-    $scope.$routeParams = $routeParams;
-    $http.get("http://jsonplaceholder.typicode.com/users").then(function(response) {
-        $scope.users = response.data;
-        // needed?
-        // $scope.profile= $routeParams.id;
-    });
-    $scope.numLimit = 1;
-    // needed?
-    // $scope.getIndex = function(users) {
-    // return $scope.users.indexOf(id);
-    // }
-});
+
 

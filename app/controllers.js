@@ -1,9 +1,10 @@
-// var app = angular.module("MyApp", []);
-
-// app.controller("PostsCtrl", function($scope, $http) {
-//   $http.defaults.headers.common["X-Custom-Header"] = "Angular.js";
-//   $http.get('http://jsonplaceholder.typicode.com/users').
-//     success(function(data, status, headers, config) {
-//       $scope.posts = data;
-//     });
-// });
+app.controller('myCtrl', function($scope, $http, $route, $routeParams, $location) {
+    
+    $scope.$route = $route;
+    $scope.$location = $location;
+    $scope.$routeParams = $routeParams;
+    
+    $http.get("http://jsonplaceholder.typicode.com/users").then(function(response) {
+        $scope.users = response.data;
+    });
+});
