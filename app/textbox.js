@@ -1,4 +1,4 @@
-// counts remaining characters available in textbox
+// count remaining characters available in textbox
 // displays number left and turns it red when <= 5
   $(function () {
       $("textarea[type=text]").on("keyup change", function (e) {
