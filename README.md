@@ -1,3 +1,16 @@
+This project is based on the angular-seed repo for quickly spinning up Angular apps. 
+
+To install dependencies,  run 'npm-start'.
+To start a local server run npm start. 
+
+For more info on angular-seed, see below:
+
+
+
+
+
+
+
 # `angular-seed` — the seed for AngularJS apps
 
 This project is an application skeleton for a typical [AngularJS][angularjs] web app. You can use it
