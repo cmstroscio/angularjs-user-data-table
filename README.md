@@ -1,7 +1,7 @@
 This project is based on the angular-seed repo for quickly spinning up Angular apps. 
 
-To install dependencies,  run 'npm-start'.
-To start a local server run npm start. 
+To install dependencies,  run 'npm install'.
+To start a local server run 'npm start'
 
 For more info on angular-seed, see below:
 
